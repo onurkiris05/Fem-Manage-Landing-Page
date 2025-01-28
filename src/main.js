@@ -7,3 +7,14 @@ navToggle.addEventListener("click", () => {
   navToggle.setAttribute("aria-expanded", isVisible);
   primaryHeader.toggleAttribute("data-overlay", isVisible);
 });
+
+const slider = new A11YSlider(document.querySelector(".slider"), {
+  adaptiveHeight: true,
+  dots: true,
+  arrows: false,
+  responsive: {
+    640: {
+      dots: false,
+    },
+  },
+});
