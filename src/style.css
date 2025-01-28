@@ -149,11 +149,16 @@ input:where([type="text"], [type="email"]) {
 }
 
 @media (max-width: 50em) {
+  .primary-header[data-overlay] {
+    position: relative;
+    z-index: 999;
+  }
+
   .primary-navigation {
     display: none;
 
     max-width: 25rem;
-    margin-left: auto;
+    margin-inline: auto;
     position: fixed;
     padding: var(--size-700);
     inset: 7rem var(--size-400) auto;
@@ -454,6 +459,55 @@ input:where([type="text"], [type="email"]) {
 @media (min-width: 50em) {
   .slider > * {
     width: 33.333%;
+  }
+}
+
+/* Images styling */
+
+@media (max-width: 50em) {
+  .hero__image {
+    order: -1;
+    justify-items: center;
+  }
+}
+
+/* Background styling */
+
+.bg-container {
+  position: relative;
+  z-index: -1;
+}
+
+.shape {
+  position: absolute;
+  width: 100%;
+}
+
+.shape-1 {
+  max-width: 600px;
+  top: -20vh;
+  left: 25vw;
+  transform: scale(1.2);
+}
+
+.shape-2 {
+  max-width: 400px;
+  top: -25vh;
+  left: 50vw;
+  transform: scale(0.9);
+}
+
+@media (min-width: 50em) {
+  .shape-1 {
+    top: -25vh;
+    left: 60vw;
+    transform: scale(1.2);
+  }
+
+  .shape-2 {
+    top: 70vh;
+    left: -20vw;
+    transform: scale(2);
   }
 }
 
