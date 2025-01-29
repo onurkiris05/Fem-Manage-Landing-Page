@@ -78,6 +78,7 @@ input:where([type="text"], [type="email"]) {
   padding: var(--size-300) var(--size-400);
   font-weight: var(--fw-bold);
   font-size: var(--fs-button);
+  width: max(100%, var(--size-400));
 }
 
 /* Button styling */
@@ -218,7 +219,8 @@ input:where([type="text"], [type="email"]) {
   grid-template-areas:
     "form"
     "nav"
-    "logo-social";
+    "logo-social"
+    "copyright";
 }
 
 .primary-footer-logo-social {
@@ -232,18 +234,22 @@ input:where([type="text"], [type="email"]) {
 
 .primary-footer-nav {
   grid-area: nav;
+  margin-inline: auto;
 }
 
 .primary-footer-form {
   grid-area: form;
+}
 
-  display: grid;
-  align-content: space-between;
+.primary-footer-copyright {
+  grid-area: copyright;
+  text-align: center;
 }
 
 @media (min-width: 50em) {
   .primary-footer-wrapper {
     grid-template-areas: "logo-social nav form";
+    grid-template-columns: min-content 1fr auto;
   }
 
   .primary-footer-logo-social {
@@ -251,6 +257,19 @@ input:where([type="text"], [type="email"]) {
     justify-content: space-between;
     flex-direction: column;
     gap: var(--size-700);
+  }
+
+  .primary-footer-copyright {
+    grid-area: form;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  .primary-footer-form {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
   }
 }
 
@@ -284,7 +303,7 @@ input:where([type="text"], [type="email"]) {
 }
 
 .social-icon {
-  width: var(--size-600);
+  min-width: var(--size-600);
   fill: var(--clr-neutral-100);
   aspect-ratio: 1;
 }
@@ -298,7 +317,7 @@ input:where([type="text"], [type="email"]) {
     gap: var(--size-300);
   }
   .social-icon {
-    width: var(--size-500);
+    min-width: var(--size-500);
   }
 }
 
@@ -599,6 +618,9 @@ input:where([type="text"], [type="email"]) {
 
 .margin-bottom-700 {
   margin-block-end: var(--size-700);
+}
+.margin-bottom-900 {
+  margin-block-end: var(--size-900);
 }
 
 :where(.flow-700 :not(:first-child)) {
